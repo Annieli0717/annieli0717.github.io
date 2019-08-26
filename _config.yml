@@ -17,8 +17,8 @@ weibo_username:     annieli0717
 zhihu_username:     annieli0717
 github_username:    annieli0717
 twitter_username:   annieli0717
-#facebook_username:  huxpro
-#linkedin_username:  firstname-lastname-idxxxx
+facebook_username:  Annie Lee
+linkedin_username:  Dunxuan(Annie) Li
 
 
 
@@ -79,7 +79,7 @@ ga_domain: huangxuan.me
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
-sidebar-avatar: /img/first_filepic.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/first_filepic.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
