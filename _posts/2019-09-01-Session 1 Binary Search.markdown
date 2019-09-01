@@ -229,7 +229,7 @@
 
 - 左右指针做逼近，最后重叠
 - 重点：必须要更新左边界
-    
+    ```java
     public int binarySearch(int[]nums, int target){
     	if(nums == null || nums.length == 0) return -1;
     	
@@ -245,6 +245,7 @@
     
     	return nums[left] == target ? left : -1;
     }
+    ```
 
 (3) left + 1 < right
 
@@ -253,6 +254,7 @@
     - 如果左右边界更新，有可能越过想要的分界线
     - e.g. 0 0 0.5 1
 
+    ```java
     public int binarySearch(int[]nums, int target){
     	if(nums == null || nums.length == 0) return -1;
     	
@@ -270,6 +272,7 @@
     	else if (nums[right] == target) return right;
     	else return -1;
     }
+    ```
 
 ## **Q4:** Start & Last Position of Target （当target有重复的情况）
 
@@ -292,7 +295,7 @@
     - 但是移动指针的条件需要改变：当当前数字大于**等于**target时，移动right到Mid；当当前数字小于target时，移动left到mid + 1
 
 **Solution 2:** left < right
-
+    ```java
     public int firstPosition(int[] nums, int target){
     	// Corner case
     	if (nums == null || nums.length == 0) return -1;
@@ -310,6 +313,7 @@
     	// 考虑当整个array里面没有target的时候
     	if (nums[left] == target) return left; // return right;
     	else return -1;
+    ``` 
 
 **Solution 3: left + 1 < right**
 
@@ -321,8 +325,8 @@
     - 把相等的情况下归到更新right指针 （相等的情况下不能直接return ← 有可能不是第一个）
 
 ![](Session1_example.jpeg)
-
-    `public int binarySearch(int[] nums, int target) {
+    ```java
+    public int binarySearch(int[] nums, int target) {
     	// Corner case
     	if (nums == null || nums.length == 0) return -1;
     
@@ -337,7 +341,7 @@
     	if (nums[right] == target) return right;
     	return -1;
     }
-    `
+    ```
 
 **Q4.3  Last Position of Target**
 
@@ -349,7 +353,7 @@ Solution 2 （错误版本): left < right
 - 解决方案：将奇偶数分类讨论⇒ if(left + right = odd) return mid + 1; if(left + right = even) return mid.
 
 ![](Session1_BS.jpeg)
-
+    ```java
     public int lastPosition(int[] nums, int target){
     
     	if (nums == null || nums.length == 0) return -1;
@@ -367,9 +371,10 @@ Solution 2 （错误版本): left < right
     	// 考虑当整个array里面没有target的时候
     	if (nums[left] == target) return left; // return right;
     	else return -1;
+        ```
 
 Solution 3 ✔️：left + 1 < right
-
+    ```java
     public int binarySearch(int[] nums, int target) {
     	// Corner case
     	if (nums == null || nums.length == 0) return -1;
@@ -385,6 +390,7 @@ Solution 3 ✔️：left + 1 < right
     	if (nums[left] == target) return left;
     	return -1;
     }
+    ```
 
 **Q4.1 L34 Search for a Range**
 
@@ -393,18 +399,15 @@ Solution 3 ✔️：left + 1 < right
 **Question**: *Given an array of integers `nums` sorted in ascending order, find the starting and ending position of a given `target` value.*
 
 **Your algorithm's runtime complexity must be in the order of O(log n).*
-
 **If the target is not found in the array, return `[-1, -1]`.*
-
 - 解题思路：
     1. Option 1: Run twice BS to find 1st and last position ⇒ 2logn = O(logn)
     2. Option 2: Run once BS to find 1st position, then scan from the 1st position until reach the last target ⇒ logn + n = O(n) 
 
     *Which one is better? It depends
-
     - 如果duplicate多 ⇒ 选Option 1
     - 如果duplicate少 ⇒ 选Option 2
-
+    ```java
     class Solution {
         public int[] searchRange(int[] nums, int target) {
             // Corner case 
@@ -440,11 +443,9 @@ Solution 3 ✔️：left + 1 < right
             return range;
         }
     }
-
+    ``` 
 ### **Q5** Closest Position of Target
-
 ---
-
 - **Question**: *找出nums array里面最接近target #的数字的位置。如果存在多个答案，任选其中一个。*
     - 区别于General BS找target: Q5在找与target的**距离**⇒ **absolute value**
 - 分析：
@@ -453,7 +454,7 @@ Solution 3 ✔️：left + 1 < right
 - 注意：不能用target - left & right - target
     - (e.g. 0.1, 1, 2) ⇒ 会越过target
 - 变形：Q5.1 **K** Closest Position of Target
-
+    ```java
     public int binarySearch(int[] nums, int target) {
     	// Corner case
     	if (nums == null || nums.length == 0) return -1;
@@ -468,6 +469,7 @@ Solution 3 ✔️：left + 1 < right
     	// return a ? b : c;
     	return Math.abs(array[left] - target) < Math.abs(array[right] - target) ? left : right; // defensive/preventive drive/program Math.abs // 无脑
     }
+    ``` 
 
 **Q5.1: L658. Find K Closest Elements**
 
@@ -492,7 +494,7 @@ vs. Option 2: 从target为中心向左右两边走
 - Option 2: 需要分类讨论当target在/不在 array里的情况来确定左右指针的初始位置
 
 Option 1:
-
+    ```java
     public class Solution {
     	public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
     		int n = arr.size();
@@ -533,9 +535,10 @@ Option 1:
     		}
     	}
     }
+    ``` 
 
 Option 2: 
-
+    ```java
     public class Solution {
         
         
@@ -584,11 +587,12 @@ Option 2:
             }
         }
     }
+    ``` 
 
 Option 3: sort absolute difference values to the target x and get k of them
 
 - Time complexity : O(nlog n). Collections.sort() uses binary sort so it has a O(nlogn) complexity.
-
+    ```java
     public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
          Collections.sort(arr, (a,b) -> a == b ? a - b : Math.abs(a-x) - Math.abs(b-x));
          arr = arr.subList(0, k);
@@ -596,6 +600,7 @@ Option 3: sort absolute difference values to the target x and get k of them
          Collections.sort(arr);
          return arr;
     }
+    ``` 
 
 ## **Q6** Largest smaller Position of Target
 
@@ -604,7 +609,7 @@ Option 3: sort absolute difference values to the target x and get k of them
 - 类似于Q4找出first position of target （当target有duplicate时，移动右边界）
 - 利用array是sort好的优势，取first pos左边第一个数。但是再做post-processingd的时候要注意有没有out of bound
 - 注意：有可能没有larget smaller的值存在 （e.g. [3, 3, 3], target = 3）
-
+    ```java
     public int binarySearch(int[] nums, int target) {
     	// Corner case
     	if (nums == null || nums.length == 0) return -1;
@@ -625,6 +630,7 @@ Option 3: sort absolute difference values to the target x and get k of them
     	}
     	return -1;
     }
+    ``` 
 
 ## **Q7** Smallest larger Position of Target
 
