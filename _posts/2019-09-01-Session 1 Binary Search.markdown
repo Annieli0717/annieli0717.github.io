@@ -53,7 +53,7 @@
 - Brute force: linear scan - for loop ⇒ O(n)
 - Binary search ⇒ O(logn)
 
-    `
+    ```java
     // The isBadVersion API is defined in the parent class VersionControl.
           boolean isBadVersion(int version);    
     public class Solution extends VersionControl {
@@ -80,13 +80,13 @@
             return 0;
         }       
     }
-    `
+    ```
 
 **解题思路：**
 
 - 将左右指针都逼近移到第一个Bad Version ← ***right = mid, left = mid + 1***
 - 当左右指针重叠在第一个Bad Version时，跳出loop ← ***while (left < right)***
-    `
+    ```java
     public int firstBadVersion(int n) {
         int left = 1;
         int right = n;   
@@ -110,7 +110,7 @@
     		// 在所有情况下，最后left pointer和right pointer重叠在first bad version
         return left; // return right;
     }
-    `
+    ```
 
 ## Q2: L374 Guess Number
 
@@ -132,7 +132,7 @@
 - 需要考虑所有element，只需要找出正确的element而不是分界线 ⇒ ***while (left ≤ right)***
 - 因为我们每次首先先判断了mid是否为正确值，我们可以不再考虑mid ⇒ ***right = mid - 1, left = mid + 1***
     
-    `
+    ```java
     /* The guess API is defined in the parent class GuessGame.
        @param num, your guess
        @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
@@ -154,7 +154,7 @@
             return -1;
         }
     }
-    `
+    ```
 
 ## **Q3:** Classical Binary Search Template
 
@@ -184,7 +184,6 @@
         ⇒ 适用于问题最后需要return记夹在左右pointer中间的**分界线**
 
         *要特别考虑夹不住的情况 ⇒ 做post-processing
-
 - 考虑target不存在在array里
 - 条件nums == null 和 nums.length == 0不能颠倒：当nums = null时，如果call nums.length会报错；当先check nums == null, 如果符合条件，编译器不会再check下一个条件 【泛函编程 (Functional Programming)】
     - a || b || c： 如果a, b, c都是false → 从左到右执行；如果有一个是true → 立马exit
@@ -203,11 +202,9 @@
         - *但是Java有garbage collector，可当做O(1)
             - 但是Garbage collection是mark → sweep
         - *对于primitive type来说，可以优化为O(1) ← 因为编译器会自动做优化 ⇒ reuse the same space
-
 (1) left ≤ right
-
 - **Bug**: 必须left = mid + 1, right = mid - 1 ← 因为当array里面只有一个element时，如果**left = mid, right = mid会造成死循环**
-
+    ```java
     public int binarySearch(int[]nums, int target){
     	// Corner case
     	if(nums == null || nums.length == 0) return -1;
@@ -226,12 +223,13 @@
     // After looping through all elements, if target is not found, return -1
     	return -1;
     }
+    ```
 
 (2) left < right 
 
 - 左右指针做逼近，最后重叠
 - 重点：必须要更新左边界
-
+    
     public int binarySearch(int[]nums, int target){
     	if(nums == null || nums.length == 0) return -1;
     	
