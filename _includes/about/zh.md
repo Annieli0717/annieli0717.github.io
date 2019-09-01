@@ -1,26 +1,30 @@
-> 离开世界之前，一切都是过程。
+> 离开世界之前，一切都是过程。 
+> Your time is limited, so don’t waste it living someone else’s life. 
 
-Hi，我是黄玄，自由设计师，[Facebook](https://www.facebook.com/) 软件工程师。兴趣包括但不限于编程语言、编译器、前端/应用开发、人机交互、开发者工具等。我曾被招募为阿里巴巴 · [阿里旅行（飞猪）](http://alitrip.com)· 前端工程师、微影时代 · 微票儿 · 前端基础工程团队负责人、[饿了么](https://ele.me/) · 大前端团队 · [PWA 顾问](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509) 等。
+Hi, I am _@Annie_ (Li, Dunxuan 李敦轩), a will-be software engineer.
 
-我多出没于[博客](https://huangxuan.me)、[微博](weibo.com/huxpro)、[知乎](https://www.zhihu.com/people/huxpro/pins/posts)、[Twitter](https://twitter.com/Huxpro/)、[Github](http://github.com/huxpro)、[Medium](https://medium.com/@Huxpro) 等地带。一些作品和开源项目，👉 戳 [Portfolio](/portfolio)、[Github](http://github.com/huxpro)、[演说.io](https://zhuanlan.zhihu.com/p/21280918)。
+I studied BS, Appled Mathematics & Statistics at [University of California, Los Angeles (UCLA)](https://en.wikipedia.org/wiki/University_of_California,_Los_Angeles) and MS, Computer Science at [University of Southern California](https://en.wikipedia.org/wiki/University_of_Southern_California).
 
+我多出没于[Github](http://github.com/huxpro) 等地带。一些作品和开源项目，👉 戳 [Github](http://github.com/annieli0717).
 
-##### 编程语言倾向表
+ 
+##### 编程语言倾向表 My Programming Languages Spectrum
 
 > __从左到右__ 为喜欢程度，__从上到下__ 为了解程度，__版本__ 表示下界。
+> __Left-right__ is how much I prefer it.  __Top-down__ is how much I know it. __Versions__ are lower bounds. 
 
 |     | 💔️           | ❤️ ️                 | ❤️❤️ ️                     | ❤️❤️❤️ ️               |
-| --- | ------------- | -------------------- | -------------------------- | ---------------------- |
-| 😅  | `PHP` `BASIC` | `C` `ObjC` `Prolog`  | `Kotlin` `Dart` `MIPS`     | `Swift` `Agda` `Idris` |
-| 🧐  |               | `C++` `Hack` `Lisp*` | `C++11` `C#` `AS3`         | `Scala` `Rust`         |
-| 😏  | `Shell`       | `Java` `Python`      | `TypeScript` `Flow` `Wasm` | `Haskell` `Coq` `ML*`  |
-| 🤓  |               | `JavaScript`         | `EcmaScript6`              | `λ` `Λ` `Π` `Σ`        |
+| --- | ------------- | -------------------- | -------------------------- | ----------------------  |
+| 😅  | `PHP` `BASIC` |  `ObjC` `Prolog`     | `Kotlin` `Dart` `MIPS`     | `HTML` `CSS` `C`        |
+| 🧐  |               | `Hack`               | `C++11` `C#` `AS3`         | `Python`                |
+| 😏  | `Shell`       | `Lisp*`              | `TypeScript`        `Wasm` | `JavaScript`            |
+| 🤓  |               | `JavaScript` `Flow`  | `EcmaScript6`              | `Java` `C++` `R`        |
 
-> __`ML*` 家族__：`OCaml` `ReasonML` `Standard ML` (`F#`)  
-> __`Lisp*` 家族__：`Clojure` `Scheme` `Racket`
+> __`ML*`__: `OCaml` `ReasonML` `Standard ML` (`F#`)  
+> __`Lisp*`__: `Clojure` `Scheme` `Racket`
 
 
-
+<!---
 ##### 演讲与分享
 
 - [Upgrading to Progressive Web Apps][9] · [JSConf CN 上海 2017](http://2017.jsconf.cn/)
@@ -42,3 +46,5 @@ Hi，我是黄玄，自由设计师，[Facebook](https://www.facebook.com/) 软�
 [7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
 [8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
 [9]: //huangxuan.me/jsconfcn2017/
+
+-->
