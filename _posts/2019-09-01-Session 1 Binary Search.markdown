@@ -1,4 +1,4 @@
-# Session 1: Binary Search (Tree) & Binary Reduction
+## Session 1: Binary Search (Tree) & Binary Reduction
 
 ---
 
@@ -34,7 +34,7 @@
     2. while(classical binary search)
     3. post-processing
 
-# III. Questions
+## III. Questions
 
 ---
 
@@ -53,19 +53,17 @@
 - Brute force: linear scan - for loop ⇒ O(n)
 - Binary search ⇒ O(logn)
 
-    /* The isBadVersion API is defined in the parent class VersionControl.
-          boolean isBadVersion(int version); */
-    
+    `
+    // The isBadVersion API is defined in the parent class VersionControl.
+          boolean isBadVersion(int version);    
     public class Solution extends VersionControl {
         public int firstBadVersion(int n) {
             // Corner case 
             if(n <= 0) return -1;
-            if(n == 1) return 1;
-            
+            if(n == 1) return 1;            
             int left = 1;
             int right = n;
-            int mid;
-            
+            int mid;            
             while (left + 1 < right){
                 mid = left + (right - left) / 2;
                 // When mid is bad AND the element before it is good, then mid is the first bad element
@@ -74,30 +72,27 @@
                 if(!isBadVersion(mid)) left = mid;
                 // When mid is bad, move right pointer to mid
                 if(isBadVersion(mid)) right = mid;
-            }
-            
+            }            
             // Post-processing
             if(!isBadVersion(left) && isBadVersion(right)) return right;
             if(isBadVersion(left) && isBadVersion(right)) return 1;
             if(!isBadVersion(left) && !isBadVersion(right)) return 0;  
             return 0;
-        }
-        
+        }       
     }
+    `
 
 **解题思路：**
 
 - 将左右指针都逼近移到第一个Bad Version ← ***right = mid, left = mid + 1***
 - 当左右指针重叠在第一个Bad Version时，跳出loop ← ***while (left < right)***
-
+    `
     public int firstBadVersion(int n) {
         int left = 1;
-        int right = n;
-    
+        int right = n;   
     // 因为这道题在找分界线，所以不用考虑left = right的case
         while (left < right) {
-            int mid = left + (right - left) / 2;
-    
+            int mid = left + (right - left) / 2;   
     				// When mid is bad, move right pointer to mid 
             if (isBadVersion(mid)) {
                 right = mid;
@@ -115,6 +110,7 @@
     		// 在所有情况下，最后left pointer和right pointer重叠在first bad version
         return left; // return right;
     }
+    `
 
 ## Q2: L374 Guess Number
 
@@ -135,18 +131,17 @@
 
 - 需要考虑所有element，只需要找出正确的element而不是分界线 ⇒ ***while (left ≤ right)***
 - 因为我们每次首先先判断了mid是否为正确值，我们可以不再考虑mid ⇒ ***right = mid - 1, left = mid + 1***
-
+    
+    `
     /* The guess API is defined in the parent class GuessGame.
        @param num, your guess
        @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
-          int guess(int num); */
-    
+          int guess(int num); */   
     public class Solution extends GuessGame {
         public int guessNumber(int n) {
             int left = 1;
             int right = n;
-            int mid;
-         
+            int mid;         
             while(left <= right){
                 mid = left + (right - left) / 2;
                 if(guess(mid) == 0) return mid;
@@ -159,6 +154,7 @@
             return -1;
         }
     }
+    `
 
 ## **Q3:** Classical Binary Search Template
 
@@ -328,7 +324,7 @@
 
 ![](Session1_example.jpeg)
 
-    public int binarySearch(int[] nums, int target) {
+    `public int binarySearch(int[] nums, int target) {
     	// Corner case
     	if (nums == null || nums.length == 0) return -1;
     
@@ -343,6 +339,7 @@
     	if (nums[right] == target) return right;
     	return -1;
     }
+    `
 
 **Q4.3  Last Position of Target**
 
