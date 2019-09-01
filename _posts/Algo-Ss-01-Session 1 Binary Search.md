@@ -326,7 +326,7 @@
         2. **Case 2**: 3, 3 ⇒ left = target
     - 把相等的情况下归到更新right指针 （相等的情况下不能直接return ← 有可能不是第一个）
 
-![](WechatIMG8-67f81416-f2c5-4268-b8e1-4db5ffd531aa.jpeg)
+![](Session1_example.jpeg)
 
     public int binarySearch(int[] nums, int target) {
     	// Corner case
@@ -353,7 +353,7 @@ Solution 2 （错误版本): left < right
 - 反例：会造成死循环因为在做两个整数相除时mid会永远停在较小的数那边⇒ 如果不move left pointer会造成left pointer永远 = mid
 - 解决方案：将奇偶数分类讨论⇒ if(left + right = odd) return mid + 1; if(left + right = even) return mid.
 
-![](WechatIMG7-48d3f630-7d28-492a-83e4-f534ec272d0d.jpeg)
+![](Session1_BS.jpeg)
 
     public int lastPosition(int[] nums, int target){
     
@@ -1189,7 +1189,7 @@ The array may contain **duplicate**s.
 
 - 不能用L153的相同方法 ⇒ 不适用于如下情况（当duplicate的数从中间分开时，导致mid从第一次划分就跳开了最小值）⇒ 所以不能以right pointer为参考值
 
-    ![](Screen_Shot_2019-06-17_at_12-89d196b3-97ec-4a9c-844c-05ac0b6f0a16.58.54_AM.png)
+    ![](Session1_bug.png)
 
     - 但是L153的方法适用于任何其他情况，如：[1, 1, 3] / [1, 3, 3] / [1, 1, 3, 3]/ [3, 1, 1]
 - **When num[mid] == num[right], we couldn't sure the position of minimum in mid's left or right, so just let upper bound reduce one**
@@ -1291,11 +1291,11 @@ The array may contain **duplicate**s.
 
 ---
 
-![](Screen_Shot_2019-06-11_at_12-92c6617b-6e19-45a4-87b4-56e970bcd0ca.42.45_PM.png)
+![](Session1_stackHeap1.png)
 
-![](Screen_Shot_2019-06-11_at_12-5a632459-3f5d-44d7-b14a-8f426f7f70e2.44.21_PM.png)
+![](Session1_stackHeap2.png)
 
-![](Screen_Shot_2019-06-11_at_12-0b260774-3a7f-4839-a4d8-199f7722eb38.48.41_PM.png)
+![](Session1_stackHeap3.png)
 
 # IV. Additional Practice Problems
 
