@@ -78,7 +78,7 @@ ga_domain: lidunxuan.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "我今年50岁，我后悔年轻的时候没有去努力。我想，要是时光能倒流30年就好了。<br> 我睁开眼睛，我今年20岁。
+sidebar-about-description: "我今年50岁，我后悔年轻的时候没有去努力。我想，要是时光能倒流30年就好了。<br> 我睁开眼睛，我今年20岁。"
 
 sidebar-avatar: /img/first_filepic.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
